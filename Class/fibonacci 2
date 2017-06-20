@@ -1,0 +1,10 @@
+(function fib(max,i,j) {
+  i = i||this[0];j=j||this[1];
+  if (max!==0) {
+    this.push(i+j);
+    max--;
+    return fib.bind(this, max, j, i+j)();
+  } else {
+    return this;
+  }
+}.bind([0,1], 10))();
